@@ -13,10 +13,12 @@ export default function SearchBox() {
   const handleFilterChange = (event) =>
     dispatch(setStatusFilter(event.target.value));
 
-  const searchInputId = useId();
+   const [searchInputId] = useId();
   return (
     <div className={css.search_box}>
-      <label htmlFor={css.search_text}>Find contacts by name</label>
+      <label htmlFor={searchInputId} className={css.search_text}>
+        Find contacts by name
+      </label>
       <input
         className={css.search_input}
         name="searchName"

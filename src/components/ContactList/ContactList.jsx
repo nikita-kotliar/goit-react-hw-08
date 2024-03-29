@@ -6,11 +6,11 @@ import { getContacts, getStatusFilter } from "../../redux/selectors";
 
 const getVisibleContact = (contacts, statusFilter) => {
   console.log(statusFilter);
-  console.log(contacts);
+  console.log(contacts.items);
   if (statusFilter == "all") {
-    return contacts;
+    return contacts.items;
   } else {
-    return contacts.filter((contact) =>
+    return contacts.items.filter((contact) =>
       contact.username.toLowerCase().includes(statusFilter.toLowerCase())
     );
   }
@@ -23,7 +23,7 @@ export default function ContactList() {
   console.log(visibleContact);
   return (
     <>
-      {contacts.length ? (
+      {contacts.items.length ? (
         <ul className={css.contacts}>
           {visibleContact.map((contact) => (
             <li className={css.contact_item} key={contact.id}>

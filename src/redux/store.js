@@ -7,17 +7,14 @@ import { filtersReducer } from "../redux/filtersSlice";
 const persistConfig = {
   key: "root",
   storage: storage,
-  blacklist: ["persist/PERSIST", REHYDRATE],
 };
 
 const persistedContactsReducer = persistReducer(persistConfig, contactsReducer);
 
-const persistedFiltersReducer = persistReducer(persistConfig, filtersReducer);
-
 export const store = configureStore({
   reducer: {
     contacts: persistedContactsReducer,
-    filters: persistedFiltersReducer, 
+    filters: filtersReducer,
   },
 });
 

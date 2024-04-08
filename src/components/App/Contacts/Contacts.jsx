@@ -1,10 +1,10 @@
 import { useSelector } from "react-redux";
 // import css from './Login.module.css';
-import ContactForm from "../ContactForm/ContactForm";
-import SearchBox from "../SearchBox/SearchBox";
-import Loader from "../Loader/Loader";
-import Error from "../Error/Error";
-import ContactList from "../ContactList/ContactList";
+import ContactForm from "../../ContactForm/ContactForm";
+import SearchBox from "../../SearchBox/SearchBox";
+import Loader from "../../Loader/Loader";
+import Error from "../../Error/Error";
+import ContactList from "../../ContactList/ContactList";
 
 export default function Contacts() {
   const loading = useSelector((state) => state.contacts.loading);
